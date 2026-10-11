@@ -68,7 +68,7 @@ export const CV = {
       {
         title: 'Project Manager',
         company: 'IT Outsourcing Company (name under NDA)',
-        where: 'US clients',
+        where: 'Remote',
         start: '2019',
         end: '2022',
         lead: 'Fixed-price and long-term T&M delivery for US-based clients, with account management for an enterprise engineering organization.',
@@ -177,7 +177,7 @@ export const CV = {
       {
         title: 'Project Manager',
         company: 'IT-аутсорсингова компанія (назва під NDA)',
-        where: 'клієнти зі США',
+        where: 'Віддалено',
         start: '2019',
         end: '2022',
         lead: 'Fixed-price і довгі T&M проєкти для клієнтів зі США, плюс акаунт-менеджмент для інженерного підрозділу enterprise-клієнта.',
