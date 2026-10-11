@@ -24,7 +24,7 @@ export const CV = {
     title: 'Senior Project Manager',
     location: 'Uzhhorod, Ukraine · Remote · EET (UTC+2/+3)',
     summary:
-      'Senior Project Manager with close to 7 years in IT delivery, since 2019. Took a fintech payments product for an enterprise client in Latin America from unclear post-sale scope to live production with 50,000+ users, leading a cross-functional team of 13 through to a full handover. Delivers across Agile, Scrum, Kanban, Waterfall and hybrid models, on fixed-price and T&M contracts. Author of PM Control Tower, an open-source framework for AI-assisted project management.',
+      'Senior Project Manager with 7+ years in IT delivery, since 2019. Took a fintech payments product for an enterprise client in Latin America from unclear post-sale scope to live production with 50,000+ users, leading a cross-functional team of 13 through to a full handover. Delivers across Agile, Scrum, Kanban, Waterfall and hybrid models, on fixed-price and T&M contracts. Author of PM Control Tower, an open-source framework for AI-assisted project management.',
     h: {
       summary: 'Summary', skills: 'Skills', experience: 'Work Experience', projects: 'Projects',
       education: 'Education', certifications: 'Certifications', languages: 'Languages',
@@ -133,7 +133,7 @@ export const CV = {
     title: 'Senior Project Manager',
     location: 'Ужгород, Україна · віддалено · EET (UTC+2/+3)',
     summary:
-      'Senior Project Manager, майже 7 років в IT delivery (з 2019 року). Прийняв платіжний фінтех-продукт enterprise-клієнта з Латинської Америки з нечітким скоупом після продажу і вивів його в продакшн, де ним користуються 50 000+ людей. Вів крос-функціональну команду з 13 людей до повного handover. Працюю за Agile, Scrum, Kanban, Waterfall і гібридними моделями, на fixed-price і T&M контрактах. Автор PM Control Tower, open-source фреймворку для AI-assisted project management.',
+      'Senior Project Manager, 7+ років в IT delivery (з 2019 року). Прийняв платіжний фінтех-продукт enterprise-клієнта з Латинської Америки з нечітким скоупом після продажу і вивів його в продакшн, де ним користуються 50 000+ людей. Вів крос-функціональну команду з 13 людей до повного handover. Працюю за Agile, Scrum, Kanban, Waterfall і гібридними моделями, на fixed-price і T&M контрактах. Автор PM Control Tower, open-source фреймворку для AI-assisted project management.',
     h: {
       summary: 'Про мене', skills: 'Навички', experience: 'Досвід роботи', projects: 'Проєкти',
       education: 'Освіта', certifications: 'Сертифікати', languages: 'Мови',
