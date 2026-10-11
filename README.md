@@ -1,7 +1,7 @@
 # bodco.pm: personal CV site of Bohdan N.
 
 One page, two languages (EN at `/`, UK at `/uk/`), same design system as
-[tower.bodco.pm](https://tower.bodco.pm): IBM Plex, 80 px grid, red bar, light by day and dark at night.
+[tower.bodco.pm](https://tower.bodco.pm): IBM Plex, 80 px grid, red bar, dark by default, light only when switched by hand.
 
 Under the hood it is built for parsers, not only for people:
 

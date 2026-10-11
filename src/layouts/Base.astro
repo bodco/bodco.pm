@@ -54,14 +54,11 @@ const jsonld = {
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <meta name="theme-color" content="#0E1014" />
     <script is:inline>
-      // Theme: the viewer's saved choice, otherwise light by day (07:00-19:00 local time) and dark at night.
+      // Theme: dark by default; light only when the viewer switched to it (remembered in the browser).
       (function () {
         var t = null;
         try { t = localStorage.getItem('theme'); } catch (e) {}
-        if (t !== 'light' && t !== 'dark') {
-          var h = new Date().getHours();
-          t = h >= 7 && h < 19 ? 'light' : 'dark';
-        }
+        if (t !== 'light') t = 'dark';
         document.documentElement.dataset.theme = t;
         var m = document.querySelector('meta[name="theme-color"]');
         if (m) m.setAttribute('content', t === 'light' ? '#F6F5F1' : '#0E1014');
