@@ -1,0 +1,64 @@
+---
+// Google Analytics 4 with Consent Mode v2: nothing is stored until the visitor accepts.
+interface Props { id: string; lang: 'en' | 'uk' }
+const { id, lang } = Astro.props;
+const text = lang === 'uk'
+  ? { msg: 'Сайт використовує Google Analytics (cookies) для підрахунку відвідувань. Дозволити?', yes: 'Дозволити', no: 'Відмовитися' }
+  : { msg: 'This site uses Google Analytics (cookies) to count visits. Allow it?', yes: 'Allow', no: 'Decline' };
+---
+<script is:inline define:vars={{ id }}>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  window.gtag = gtag;
+  gtag('consent', 'default', {
+    analytics_storage: 'denied',
+    ad_storage: 'denied',
+    ad_user_data: 'denied',
+    ad_personalization: 'denied',
+  });
+  var saved = null;
+  try { saved = localStorage.getItem('analytics-consent'); } catch (e) {}
+  if (saved === 'granted') gtag('consent', 'update', { analytics_storage: 'granted' });
+  gtag('js', new Date());
+  gtag('config', id, { allow_google_signals: false, allow_ad_personalization_signals: false });
+  var s = document.createElement('script');
+  s.async = true;
+  s.src = 'https://www.googletagmanager.com/gtag/js?id=' + id;
+  document.head.appendChild(s);
+</script>
+<div class="consent" id="consent" role="region" aria-label="Analytics consent" hidden>
+  <p>{text.msg}</p>
+  <div class="consent__btns">
+    <button type="button" data-consent="granted">{text.yes}</button>
+    <button type="button" data-consent="denied">{text.no}</button>
+  </div>
+</div>
+<script is:inline>
+  (function () {
+    var box = document.getElementById('consent');
+    var saved = null;
+    try { saved = localStorage.getItem('analytics-consent'); } catch (e) {}
+    if (!saved) box.hidden = false;
+    box.addEventListener('click', function (e) {
+      var v = e.target && e.target.getAttribute && e.target.getAttribute('data-consent');
+      if (!v) return;
+      try { localStorage.setItem('analytics-consent', v); } catch (err) {}
+      if (v === 'granted') window.gtag('consent', 'update', { analytics_storage: 'granted' });
+      box.hidden = true;
+    });
+  })();
+</script>
+<style is:global>
+  .consent { position: fixed; left: 16px; right: 16px; bottom: 16px; z-index: 50; max-width: 560px;
+    display: flex; flex-wrap: wrap; align-items: center; gap: 12px 16px; padding: 14px 16px;
+    background: var(--surface, #12151a); color: var(--text, #ecedef);
+    border: 1px solid var(--line-strong, #2c313a); border-left: 3px solid var(--accent, #e8492f);
+    font: 14px/1.45 var(--sans, system-ui, sans-serif); box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35); }
+  .consent[hidden] { display: none; }
+  .consent p { margin: 0; flex: 1 1 260px; }
+  .consent__btns { display: flex; gap: 8px; }
+  .consent button { font: inherit; cursor: pointer; padding: 8px 14px; color: var(--text, #ecedef);
+    background: transparent; border: 1px solid var(--line-button, #3a404a); }
+  .consent button[data-consent="granted"] { background: var(--accent, #e8492f); color: var(--on-accent, #0e1014); border-color: var(--accent, #e8492f); }
+  .consent button:focus-visible { outline: 2px solid var(--accent, #e8492f); outline-offset: 2px; }
+</style>

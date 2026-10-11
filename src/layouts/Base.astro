@@ -2,6 +2,7 @@
 import '../styles/global.css';
 import '../styles/cv.css';
 import { CONTACT, CV } from '../data/cv.mjs';
+import Analytics from '../components/Analytics.astro';
 import plexBold from '@fontsource/ibm-plex-sans/files/ibm-plex-sans-latin-700-normal.woff2?url';
 
 interface Props { lang: 'en' | 'uk'; title: string; description: string; noindex?: boolean }
@@ -83,5 +84,6 @@ const jsonld = {
   </head>
   <body>
     <slot />
+    <Analytics id="G-55XLZ3NJ4L" lang={lang} />
   </body>
 </html>
