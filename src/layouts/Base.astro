@@ -1,0 +1,87 @@
+---
+import '../styles/global.css';
+import '../styles/cv.css';
+import { CONTACT, CV } from '../data/cv.mjs';
+import plexBold from '@fontsource/ibm-plex-sans/files/ibm-plex-sans-latin-700-normal.woff2?url';
+
+interface Props { lang: 'en' | 'uk'; title: string; description: string; noindex?: boolean }
+const { lang, title, description, noindex = false } = Astro.props;
+const canonical = new URL(lang === 'uk' ? '/uk/' : '/', Astro.site);
+const og = new URL('/og.png', Astro.site);
+const d = CV[lang];
+
+const jsonld = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfilePage',
+  '@id': `${canonical.href}#page`,
+  url: canonical.href,
+  dateModified: new Date().toISOString().slice(0, 10),
+  inLanguage: lang,
+  mainEntity: {
+    '@type': 'Person',
+    '@id': 'https://bodco.pm/#person',
+    name: CONTACT.name,
+    jobTitle: d.title,
+    description: d.summary,
+    url: 'https://bodco.pm/',
+    email: `mailto:${CONTACT.email}`,
+    address: { '@type': 'PostalAddress', addressLocality: 'Uzhhorod', addressCountry: 'UA' },
+    sameAs: [CONTACT.linkedin.url, CONTACT.telegram.url, CONTACT.github.url],
+    subjectOf: { '@type': 'SoftwareSourceCode', name: 'PM Control Tower', url: CONTACT.tower, codeRepository: CONTACT.towerRepo, license: 'https://opensource.org/licenses/MIT' },
+    knowsLanguage: ['en', 'uk', 'hu'],
+    knowsAbout: ['Project management', 'Delivery management', 'Agile', 'Scrum', 'Kanban', 'Waterfall', 'Risk management', 'Stakeholder management', 'Fintech', 'Payments', 'Release management', 'AI-assisted project management'],
+    alumniOf: { '@type': 'CollegeOrUniversity', name: 'Uzhhorod National University' },
+    worksFor: { '@type': 'Organization', name: 'Volya Technologies' },
+  },
+};
+---
+<!doctype html>
+<html lang={lang} data-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="author" content={CONTACT.name} />
+    {noindex ? <meta name="robots" content="noindex" /> : <>
+    <link rel="canonical" href={canonical} />
+    <link rel="alternate" hreflang="en" href={new URL('/', Astro.site)} />
+    <link rel="alternate" hreflang="uk" href={new URL('/uk/', Astro.site)} />
+    <link rel="alternate" hreflang="x-default" href={new URL('/', Astro.site)} />
+    </>}
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <meta name="theme-color" content="#0E1014" />
+    <script is:inline>
+      // Theme: the viewer's saved choice, otherwise light by day (07:00-19:00 local time) and dark at night.
+      (function () {
+        var t = null;
+        try { t = localStorage.getItem('theme'); } catch (e) {}
+        if (t !== 'light' && t !== 'dark') {
+          var h = new Date().getHours();
+          t = h >= 7 && h < 19 ? 'light' : 'dark';
+        }
+        document.documentElement.dataset.theme = t;
+        var m = document.querySelector('meta[name="theme-color"]');
+        if (m) m.setAttribute('content', t === 'light' ? '#F6F5F1' : '#0E1014');
+      })();
+    </script>
+    <link rel="preload" href={plexBold} as="font" type="font/woff2" crossorigin />
+    <meta property="og:type" content="profile" />
+    <meta property="og:site_name" content="bodco.pm" />
+    <meta property="og:image:alt" content="Bohdan N., Senior Project Manager" />
+    <meta property="og:locale:alternate" content={lang === 'uk' ? 'en_US' : 'uk_UA'} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={og} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content={lang === 'uk' ? 'uk_UA' : 'en_US'} />
+    <meta name="twitter:card" content="summary_large_image" />
+    {!noindex && <script type="application/ld+json" set:html={JSON.stringify(jsonld)} />}
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

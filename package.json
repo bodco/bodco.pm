@@ -1,0 +1,23 @@
+{
+  "name": "bodco.pm",
+  "type": "module",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Bohdan N., personal CV site, served at bodco.pm",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "check:text": "node scripts/check-text.mjs",
+    "cv": "node scripts/build-cv.mjs"
+  },
+  "dependencies": {
+    "astro": "5.18.2",
+    "@fontsource/ibm-plex-mono": "5.3.0",
+    "@fontsource/ibm-plex-sans": "5.3.0"
+  },
+  "devDependencies": {
+    "docx": "9.5.1",
+    "playwright-core": "1.56.1"
+  }
+}
