@@ -103,7 +103,7 @@ export const CV = {
     project: {
       name: 'PM Control Tower',
       meta: 'Open source (MIT) · v1.6.1 beta',
-      text: 'Claude plugin and Notion template for project managers: 22 project-agnostic Claude skills, a Notion hub of 11 linked databases and one config file per project. Collects context, preps meetings, drafts reports and tracks risks on daily, weekly and monthly schedules, with live tips during calls. A human approves every outgoing message. Built and used daily on a live client project.',
+      text: 'Claude plugin and Notion template for project managers: 22 project-agnostic Claude skills, a Notion hub of 11 linked databases and one config file per project. Collects context, preps meetings, drafts reports and tracks risks on daily, weekly and monthly schedules. A human approves every outgoing message. Built and used daily on a live client project.',
       links: 'tower.bodco.pm · github.com/bodco/pm-control-tower',
     },
     skills: [
@@ -212,7 +212,7 @@ export const CV = {
     project: {
       name: 'PM Control Tower',
       meta: 'Open source (MIT) · v1.6.1 beta',
-      text: 'Claude-плагін і Notion-шаблон для проєктних менеджерів: 22 Claude skills, не прив’язані до проєкту, Notion-хаб з 11 пов’язаних баз і один конфіг-файл на проєкт. Збирає контекст, готує до мітингів, пише чернетки звітів і веде ризики за щоденним, тижневим і місячним розкладом, а під час дзвінків дає підказки. Кожне вихідне повідомлення погоджує людина. Створений і щодня працює на живому клієнтському проєкті.',
+      text: 'Claude-плагін і Notion-шаблон для проєктних менеджерів: 22 Claude skills, не прив’язані до проєкту, Notion-хаб з 11 пов’язаних баз і один конфіг-файл на проєкт. Збирає контекст, готує до мітингів, пише чернетки звітів і веде ризики за щоденним, тижневим і місячним розкладом. Кожне вихідне повідомлення погоджує людина. Створений і щодня працює на живому клієнтському проєкті.',
       links: 'tower.bodco.pm · github.com/bodco/pm-control-tower',
     },
     skills: [
