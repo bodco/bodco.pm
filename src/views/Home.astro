@@ -67,16 +67,17 @@ const T = {
       ['03 · Outcome', 'Live, then handed over', 'The product runs on card infrastructure with 50,000+ users. When development moved in-house, I led a structured handover of the team and production stayed stable.'],
     ],
     ct: {
-      ver: 'v1.6.3 · beta · MIT',
+      ver: 'v1.9 · beta · MIT',
       h: 'I built the system I run delivery with',
-      p: 'An open-source Claude plugin and Notion template for project managers. It collects context, preps meetings, drafts reports and tracks risks on daily, weekly and monthly schedules. Every project fact sits in one config file, and a human approves every outgoing message.',
+      p: 'An open-source Claude plugin and Notion template for project managers. It collects context, preps meetings, drafts reports and tracks risks on daily, weekly and monthly schedules. Every project fact sits in one config file, and a human approves every outgoing message. Live Tips, its companion Mac app, sits under the camera during calls: the answer when I am asked, the next sentence to say, notes into Notion after the call.',
       note: 'Built and used daily on a live client project.',
-      visit: 'Visit tower.bodco.pm', gh: 'GitHub', notion: 'Notion template',
-      counts: [['22', 'Claude skills, project-agnostic'], ['11', 'linked Notion databases'], ['1', 'config file per project']],
+      visit: 'Explore Control Tower', gh: 'GitHub', notion: 'Notion template', live: 'Live Tips',
+      counts: [['21', 'Claude skills, project-agnostic'], ['11', 'linked Notion databases'], ['1', 'Mac app for calls, Live Tips']],
       log: [
         ['daily', 'work report, reply drafts', 'scheduled'],
         ['weekly', 'overview across projects', 'scheduled'],
         ['monthly', 'client report draft', 'scheduled'],
+        ['on calls', 'Live Tips: facts or silence', 'live'],
         ['always', 'a human approves every message', 'gate'],
       ],
     },
@@ -99,7 +100,7 @@ const T = {
     footerContact: 'Contact',
     footerFiles: 'CV files',
     footerLine: '© 2026 Bohdan N. · Built on the PM Control Tower design system',
-    towerSite: 'PM Control Tower site', towerRepo: 'GitHub repository', towerNotion: 'Notion template',
+    towerSite: 'PM Control Tower site', towerRepo: 'GitHub repository', towerNotion: 'Notion template', liveTips: 'Live Tips for Mac',
     pdfEn: 'PDF (English)', docxEn: 'Word (English)', pdfUk: 'PDF (Ukrainian)', docxUk: 'Word (Ukrainian)',
   },
   uk: {
@@ -155,16 +156,17 @@ const T = {
       ['03 · Результат', 'Продакшн, потім передача', 'Продукт працює на картковій інфраструктурі з 50 000+ користувачів. Коли розробка пішла in-house, я провів структурований handover команди, прод залишився стабільним.'],
     ],
     ct: {
-      ver: 'v1.6.3 · beta · MIT',
+      ver: 'v1.9 · beta · MIT',
       h: 'Я зібрав систему, якою веду delivery',
-      p: 'Open-source Claude-плагін і Notion-шаблон для проєктних менеджерів. Збирає контекст, готує до мітингів, пише чернетки звітів і веде ризики за щоденним, тижневим і місячним розкладом. Усі факти про проєкт живуть в одному конфіг-файлі, кожне вихідне повідомлення погоджує людина.',
+      p: 'Open-source Claude-плагін і Notion-шаблон для проєктних менеджерів. Збирає контекст, готує до мітингів, пише чернетки звітів і веде ризики за щоденним, тижневим і місячним розкладом. Усі факти про проєкт живуть в одному конфіг-файлі, кожне вихідне повідомлення погоджує людина. Live Tips, супутній застосунок для Мака, сидить під камерою під час дзвінків: відповідь, коли мене питають, наступне речення, нотатки в Notion після дзвінка.',
       note: 'Створений і щодня працює на живому клієнтському проєкті.',
-      visit: 'Перейти на tower.bodco.pm', gh: 'GitHub', notion: 'Notion-шаблон',
-      counts: [['22', 'Claude skills, не прив’язані до проєкту'], ['11', 'пов’язаних баз у Notion'], ['1', 'конфіг-файл на проєкт']],
+      visit: 'Детальніше про Control Tower', gh: 'GitHub', notion: 'Notion-шаблон', live: 'Live Tips',
+      counts: [['21', 'Claude skills, не прив’язані до проєкту'], ['11', 'пов’язаних баз у Notion'], ['1', 'застосунок для дзвінків, Live Tips']],
       log: [
         ['daily', 'звіт за день, чернетки відповідей', 'scheduled'],
         ['weekly', 'огляд усіх проєктів', 'scheduled'],
         ['monthly', 'чернетка звіту клієнту', 'scheduled'],
+        ['на дзвінках', 'Live Tips: факт або тиша', 'live'],
         ['always', 'кожне повідомлення погоджує людина', 'gate'],
       ],
     },
@@ -187,7 +189,7 @@ const T = {
     footerContact: 'Контакти',
     footerFiles: 'Файли CV',
     footerLine: '© 2026 Bohdan N. · Зроблено на дизайн-системі PM Control Tower',
-    towerSite: 'Сайт PM Control Tower', towerRepo: 'Репозиторій на GitHub', towerNotion: 'Notion-шаблон',
+    towerSite: 'Сайт PM Control Tower', towerRepo: 'Репозиторій на GitHub', towerNotion: 'Notion-шаблон', liveTips: 'Live Tips для Мака',
     pdfEn: 'PDF (англійською)', docxEn: 'Word (англійською)', pdfUk: 'PDF (українською)', docxUk: 'Word (українською)',
   },
 }[lang];
@@ -320,10 +322,11 @@ const contacts = [
               <a class="btn btn--primary" href={CONTACT.tower}>{T.ct.visit} <Arrow /></a>
               <a class="more" href={CONTACT.towerRepo}><GithubLogo /> {T.ct.gh} <Arrow /></a>
               <a class="more" href={CONTACT.towerNotion}><NotionLogo /> {T.ct.notion} <Arrow /></a>
+              <a class="more" href={CONTACT.liveTips}><svg class="logo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4.5h14a1.5 1.5 0 0 1 1.5 1.5v9a1.5 1.5 0 0 1-1.5 1.5h-8.2L7 19.8V16.5H5A1.5 1.5 0 0 1 3.5 15V6A1.5 1.5 0 0 1 5 4.5Z"/><path d="M7.5 9h9M7.5 12.2h5.5"/></svg> {T.ct.live} <Arrow /></a>
             </div>
           </div>
           <figure class="codefig ct__console" aria-label="PM Control Tower">
-            <figcaption><a href={CONTACT.tower}>tower.bodco.pm ↗</a><span>v1.6.3 beta</span></figcaption>
+            <figcaption><a href={CONTACT.tower}>tower.bodco.pm ↗</a><span>v1.9 beta</span></figcaption>
             <div class="ct__counts">
               {T.ct.counts.map(([b, s]) => <div><b>{b}</b><span>{s}</span></div>)}
             </div>
@@ -474,6 +477,7 @@ const contacts = [
           <a href={CONTACT.tower}>{T.towerSite}</a>
           <a href={CONTACT.towerRepo}>{T.towerRepo}</a>
           <a href={CONTACT.towerNotion}>{T.towerNotion}</a>
+          <a href={CONTACT.liveTips}>{T.liveTips}</a>
         </div>
       </div>
     </div>

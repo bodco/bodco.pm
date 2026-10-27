@@ -12,6 +12,7 @@ export const CONTACT = {
   tower: 'https://tower.bodco.pm',
   towerRepo: 'https://github.com/bodco/pm-control-tower',
   towerNotion: 'https://bodco.notion.site/pm-control-tower',
+  liveTips: 'https://tower.bodco.pm/live-tips/',
 };
 
 export const FILES = {
@@ -102,9 +103,9 @@ export const CV = {
     ],
     project: {
       name: 'PM Control Tower',
-      meta: 'Open source (MIT) · v1.6.1 beta',
-      text: 'Claude plugin and Notion template for project managers: 22 project-agnostic Claude skills, a Notion hub of 11 linked databases and one config file per project. Collects context, preps meetings, drafts reports and tracks risks on daily, weekly and monthly schedules. A human approves every outgoing message. Built and used daily on a live client project.',
-      links: 'tower.bodco.pm · github.com/bodco/pm-control-tower',
+      meta: 'Open source (MIT) · v1.9 beta',
+      text: 'Claude plugin and Notion template for project managers: 21 project-agnostic Claude skills, a Notion hub of 11 linked databases and one config file per project. Collects context, preps meetings, drafts reports and tracks risks on daily, weekly and monthly schedules. A human approves every outgoing message. Live Tips, a companion Mac app, gives facts and ready sentences during calls and writes the meeting notes to Notion. Built and used daily on a live client project.',
+      links: 'tower.bodco.pm · github.com/bodco/pm-control-tower · github.com/bodco/live-tips',
     },
     skills: [
       { name: 'Delivery and methodology', items: ['End-to-end delivery', 'Agile', 'Scrum', 'Kanban', 'Waterfall', 'Hybrid', 'Full SDLC', 'Release management', 'Change management', 'Risk management', 'Quality management'] },
@@ -211,9 +212,9 @@ export const CV = {
     ],
     project: {
       name: 'PM Control Tower',
-      meta: 'Open source (MIT) · v1.6.1 beta',
-      text: 'Claude-плагін і Notion-шаблон для проєктних менеджерів: 22 Claude skills, не прив’язані до проєкту, Notion-хаб з 11 пов’язаних баз і один конфіг-файл на проєкт. Збирає контекст, готує до мітингів, пише чернетки звітів і веде ризики за щоденним, тижневим і місячним розкладом. Кожне вихідне повідомлення погоджує людина. Створений і щодня працює на живому клієнтському проєкті.',
-      links: 'tower.bodco.pm · github.com/bodco/pm-control-tower',
+      meta: 'Open source (MIT) · v1.9 beta',
+      text: 'Claude-плагін і Notion-шаблон для проєктних менеджерів: 21 Claude skill, не прив’язані до проєкту, Notion-хаб з 11 пов’язаних баз і один конфіг-файл на проєкт. Збирає контекст, готує до мітингів, пише чернетки звітів і веде ризики за щоденним, тижневим і місячним розкладом. Кожне вихідне повідомлення погоджує людина. Live Tips, супутній застосунок для Мака, дає факти і готові речення під час дзвінків і записує нотатки зустрічі в Notion. Створений і щодня працює на живому клієнтському проєкті.',
+      links: 'tower.bodco.pm · github.com/bodco/pm-control-tower · github.com/bodco/live-tips',
     },
     skills: [
       { name: 'Delivery і методології', items: ['End-to-end delivery', 'Agile', 'Scrum', 'Kanban', 'Waterfall', 'гібридні моделі', 'повний SDLC', 'Release management', 'Change management', 'Risk management', 'Quality management'] },

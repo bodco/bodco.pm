@@ -1,11 +1,23 @@
+# Update proposals: GitHub Actions monthly in one grouped PR; npm weekly, minor and patch only (a major
+# version of Astro needs a deliberate upgrade and a check of the site). Security updates still arrive.
 version: 2
 updates:
   - package-ecosystem: github-actions
     directory: /
     schedule:
-      interval: weekly
+      interval: monthly
+    groups:
+      actions:
+        patterns: ["*"]
   - package-ecosystem: npm
     directory: /
     schedule:
       interval: weekly
-    open-pull-requests-limit: 5
+    open-pull-requests-limit: 3
+    groups:
+      npm-minor-patch:
+        update-types: ["minor", "patch"]
+    ignore:
+      - dependency-name: "*"
+        update-types: ["version-update:semver-major"]
+      - dependency-name: "playwright-core"      # matches the Chromium the CV files are built with

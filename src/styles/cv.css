@@ -375,3 +375,7 @@ html[data-theme='light'] .skills-grid .card--accent { background: var(--surface)
   .hero .btns .btn--primary { flex: 1 1 100%; justify-content: center; }
   .hero .btns .btn:not(.btn--primary), .contact__files .btn { flex: 1 1 0; justify-content: center; padding-left: 10px; padding-right: 10px; }
 }
+
+/* 2026-10-27: the main button on its own line, the three links (GitHub, Notion, Live Tips) in one row under it */
+.ct__btns { flex-wrap: wrap; row-gap: 16px; }
+.ct__btns .btn--primary { margin-right: calc(100% - 1px); }
