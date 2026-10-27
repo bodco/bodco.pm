@@ -12,7 +12,7 @@
     "cv": "node scripts/build-cv.mjs"
   },
   "dependencies": {
-    "astro": "5.18.2",
+    "astro": "7.4.2",
     "@fontsource/ibm-plex-mono": "5.3.0",
     "@fontsource/ibm-plex-sans": "5.3.0"
   },
