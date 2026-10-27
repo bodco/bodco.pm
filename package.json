@@ -6,7 +6,7 @@
   "description": "Bohdan N., personal CV site, served at bodco.pm",
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
+    "build": "astro build && node scripts/csp.mjs",
     "preview": "astro preview",
     "check:text": "node scripts/check-text.mjs",
     "cv": "node scripts/build-cv.mjs"
