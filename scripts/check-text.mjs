@@ -10,9 +10,11 @@ const ROOTS = ['src', 'public', 'README.md', 'DEPLOY.md'];
 const EXT = new Set(['.astro', '.md', '.mdx', '.ts', '.js', '.mjs', '.css', '.json', '.svg', '.html', '.txt', '']);
 const LONG_DASH = String.fromCharCode(0x2014);
 
-const privateWords = existsSync('.private-words')
-  ? readFileSync('.private-words', 'utf8').split('\n').map((s) => s.trim()).filter((s) => s && !s.startsWith('#'))
-  : [];
+// The list comes from the local file, or from the PRIVATE_WORDS secret in CI (a missing list is
+// reported, so a green run never pretends the check ran).
+const rawWords = process.env.PRIVATE_WORDS || (existsSync('.private-words') ? readFileSync('.private-words', 'utf8') : null);
+if (rawWords === null) console.warn('check-text: no private word list (.private-words or PRIVATE_WORDS): names not checked');
+const privateWords = (rawWords ?? '').split('\n').map((s) => s.trim()).filter((s) => s && !s.startsWith('#'));
 
 function walk(p, out = []) {
   if (!existsSync(p)) return out;
@@ -33,7 +35,7 @@ for (const file of ROOTS.flatMap((r) => walk(r))) {
       problems++;
     }
     for (const w of privateWords) {
-      if (new RegExp(`\\b${w.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`, 'i').test(line)) {
+      if (new RegExp(`(?<![\\p{L}\\p{N}_])${w.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}(?![\\p{L}\\p{N}_])`, 'iu').test(line)) {
         console.error(`${file}:${i + 1}: private word "${w}"`);
         problems++;
       }

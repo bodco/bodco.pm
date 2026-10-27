@@ -23,7 +23,7 @@ Under the hood it is built for parsers, not only for people:
 
 ## Rules for the text
 
-Facts come only from the Truth Bank (Notion: Job Search 2026-2027 > CV і Truth Bank). In short:
+Facts come only from the Truth Bank (Notion: Opportunities > CV і Truth Bank). In short:
 name is always "Bohdan N.", no phone, no pre-2019 experience, no education years, the 2019-2022
 employer is always "IT Outsourcing Company (name under NDA)", no client or product names, no
 hours-saved claims for PM Control Tower, no long dashes. Nothing on the page says "open to work".

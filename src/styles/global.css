@@ -48,10 +48,6 @@ html { scroll-behavior: smooth; scroll-padding-top: 88px; }
 body {
   margin: 0;
   background-color: var(--bg);
-  background-image:
-    linear-gradient(var(--grid-line) 1px, transparent 1px),
-    linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
-  background-size: var(--grid) var(--grid);
   color: var(--text);
   font-family: var(--sans);
   font-size: 16px;
@@ -364,3 +360,14 @@ html[data-theme='dark'] .theme-btn .i-moon { display: none; }
 .btn svg.logo { width: 18px; height: 18px; flex: none; }
 .mock-caption { margin: 12px 0 0; font-size: 13px; color: var(--text-3); }
 @media (max-width: 480px) { .lang a { padding: 12px 8px; } .theme-btn, .menu-btn { width: 40px; } }
+
+/* 2026-10-27 (owner): the grid behind all text made pages hard to read. It stays only as a faint
+   texture at the top of the hero, fading out before the text below. */
+.hero, .page-hero { position: relative; isolation: isolate; }
+.hero::before, .page-hero::before {
+  content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+  background-image: linear-gradient(var(--grid-line) 1px, transparent 1px), linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+  background-size: var(--grid) var(--grid);
+  -webkit-mask-image: linear-gradient(to bottom, #000 0%, transparent 85%); mask-image: linear-gradient(to bottom, #000 0%, transparent 85%);
+}
+@media print { .hero::before, .page-hero::before { display: none; } }
