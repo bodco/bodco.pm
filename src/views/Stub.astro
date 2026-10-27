@@ -1,0 +1,41 @@
+---
+// 2026-10-27 (owner): a temporary placeholder for bodco.pm. The full page (views/Home.astro, the CV files)
+// is kept as it is; to bring it back, render <Home /> again in pages/index.astro and pages/uk/index.astro
+// and remove the "Placeholder" step from .github/workflows/deploy.yml.
+interface Props { lang: 'en' | 'uk' }
+const { lang } = Astro.props;
+const T = lang === 'uk'
+  ? { title: 'bodco.pm', h: 'Сторінка оновлюється', p: 'Тут скоро буде нова версія.', other: 'English', otherHref: '/' }
+  : { title: 'bodco.pm', h: 'This page is being updated', p: 'A new version is coming soon.', other: 'Українською', otherHref: '/uk/' };
+---
+<!doctype html>
+<html lang={lang}>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <title>{T.title}</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <style>
+    :root { color-scheme: light dark; --bg: #f6f6f4; --text: #16181d; --muted: #6b6f78; --accent: #e8492f; }
+    @media (prefers-color-scheme: dark) { :root { --bg: #0e1014; --text: #ecedef; --muted: #8b9099; } }
+    html, body { margin: 0; height: 100%; background: var(--bg); color: var(--text);
+      font: 16px/1.5 -apple-system, BlinkMacSystemFont, "IBM Plex Sans", system-ui, sans-serif; }
+    body { display: grid; place-items: center; border-left: 6px solid var(--accent); box-sizing: border-box; padding: 24px; }
+    main { max-width: 460px; }
+    .mark { width: 40px; height: 40px; display: block; margin-bottom: 24px; }
+    h1 { font-size: 28px; line-height: 1.2; margin: 0 0 10px; }
+    p { margin: 0 0 20px; color: var(--muted); }
+    a { color: var(--accent); text-decoration: none; font-size: 14px; }
+  </style>
+</head>
+<body>
+  <main>
+    <svg class="mark" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" fill="#e8492f"/><g fill="none" stroke="#0e1014" stroke-width="2.6"><path d="M6.8 8.7V23.3M5.5 10H11a3 3 0 0 1 0 6H6.8M6.8 16h4.7a3.35 3.35 0 0 1 0 6.7H5.5"/><path d="M18.6 23.3V8.7L25.4 23.3V8.7"/></g></svg>
+    <h1>{T.h}</h1>
+    <p>{T.p}</p>
+    <a href={T.otherHref} lang={lang === 'uk' ? 'en' : 'uk'}>{T.other}</a>
+  </main>
+</body>
+</html>

@@ -1,11 +1,5 @@
 ---
-import Base from '../layouts/Base.astro';
+// import Base from '../layouts/Base.astro';   // 2026-10-27: the full 404 page is paused with the placeholder
+import Stub from '../views/Stub.astro';
 ---
-<Base lang="en" title="Not found · Bohdan N." description="This page does not exist." noindex>
-  <main class="wrap section" style="min-height:70vh;display:flex;flex-direction:column;gap:24px;justify-content:center;">
-    <p class="eyebrow">404 · Off the route</p>
-    <h1 class="h1">This page is not on the strip.</h1>
-    <p class="lead">The CV lives on the home page.</p>
-    <div class="btns"><a class="btn btn--primary" href="/">Bohdan N. · CV</a><a class="btn" href="/uk/">Українською</a></div>
-  </main>
-</Base>
+<Stub lang="en" />

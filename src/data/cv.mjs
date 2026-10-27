@@ -25,7 +25,7 @@ export const CV = {
     title: 'Senior Project Manager',
     location: 'Uzhhorod, Ukraine · Remote · EET (UTC+2/+3)',
     summary:
-      'Senior Project Manager with 7+ years in IT delivery, since 2019. Took a fintech payments product for an enterprise client in Latin America from unclear post-sale scope to live production with 50,000+ users, leading a cross-functional team of 13 through to a full handover. Delivers across Agile, Scrum, Kanban, Waterfall and hybrid models, on fixed-price and T&M contracts. Author of PM Control Tower, an open-source framework for AI-assisted project management.',
+      'Senior Project Manager with 7+ years in IT delivery, since 2019. Took a fintech payments product for an enterprise client in Latin America from unclear post-sale scope to live production with 50,000+ users, leading a cross-functional team of 13; part of the development has since moved in-house to the client, and our team still runs the rest. Delivers across Agile, Scrum, Kanban, Waterfall and hybrid models, on fixed-price and T&M contracts. Author of PM Control Tower, an open-source framework for AI-assisted project management.',
     h: {
       summary: 'Summary', skills: 'Skills', experience: 'Work Experience', projects: 'Projects',
       education: 'Education', certifications: 'Certifications', languages: 'Languages',
@@ -44,7 +44,7 @@ export const CV = {
             items: [
               'Took over a fintech payments product for an enterprise client in Latin America after discovery, reverse-engineered what had been sold against what the client actually needed, set the real scope and drove it from early build to live production on card infrastructure, now serving 50,000+ users.',
               'Owned the full delivery lifecycle (requirements, planning, release management, budget, risk, quality) across hybrid Agile and fixed-scope phases.',
-              'Led the structured handover of the development team to the client as the engagement moved in-house, keeping the production system stable.',
+              'Led the structured handover of part of the development to the client as it moved in-house, keeping the production system stable; the rest stays with our team.',
             ],
           },
           {
@@ -134,7 +134,7 @@ export const CV = {
     title: 'Senior Project Manager',
     location: 'Ужгород, Україна · віддалено · EET (UTC+2/+3)',
     summary:
-      'Senior Project Manager, 7+ років в IT delivery (з 2019 року). Прийняв платіжний фінтех-продукт enterprise-клієнта з Латинської Америки з нечітким скоупом після продажу і вивів його в продакшн, де ним користуються 50 000+ людей. Вів крос-функціональну команду з 13 людей до повного handover. Працюю за Agile, Scrum, Kanban, Waterfall і гібридними моделями, на fixed-price і T&M контрактах. Автор PM Control Tower, open-source фреймворку для AI-assisted project management.',
+      'Senior Project Manager, 7+ років в IT delivery (з 2019 року). Прийняв платіжний фінтех-продукт enterprise-клієнта з Латинської Америки з нечітким скоупом після продажу і вивів його в продакшн, де ним користуються 50 000+ людей. Вів крос-функціональну команду з 13 людей; частину розробки клієнт згодом забрав in-house, решту досі веде наша команда. Працюю за Agile, Scrum, Kanban, Waterfall і гібридними моделями, на fixed-price і T&M контрактах. Автор PM Control Tower, open-source фреймворку для AI-assisted project management.',
     h: {
       summary: 'Про мене', skills: 'Навички', experience: 'Досвід роботи', projects: 'Проєкти',
       education: 'Освіта', certifications: 'Сертифікати', languages: 'Мови',
@@ -153,7 +153,7 @@ export const CV = {
             items: [
               'Прийняв платіжний фінтех-продукт enterprise-клієнта з Латинської Америки після discovery, розібрав, що продали, а що клієнту реально потрібно, зафіксував справжній скоуп і довів продукт від ранньої розробки до продакшену на картковій інфраструктурі. Сьогодні ним користуються 50 000+ людей.',
               'Відповідав за весь цикл delivery (вимоги, планування, release management, бюджет, ризики, якість) у гібридних Agile і fixed-scope фазах.',
-              'Провів структурований handover команди розробки клієнту, коли той забирав розробку in-house, і зберіг стабільність продакшену.',
+              'Провів структурований handover частини розробки клієнту, коли той забирав її in-house, і зберіг стабільність продакшену; решта лишається за нашою командою.',
             ],
           },
           {
