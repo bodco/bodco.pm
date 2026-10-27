@@ -34,7 +34,9 @@ jobs:
       - run: npm run build
       - name: Placeholder (2026-10-27, temporary)
         # The CV files and the preview image are kept in the repository but not published while bodco.pm is a placeholder.
-        run: rm -rf dist/cv dist/og.png && printf 'User-agent: *\nDisallow: /\n' > dist/robots.txt && rm -f dist/sitemap.txt
+        run: |
+          rm -rf dist/cv dist/og.png dist/sitemap.txt
+          printf 'User-agent: *\nDisallow: /\n' > dist/robots.txt
       - uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
         with:
           path: dist
